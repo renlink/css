@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+<meta name="charset" content="utf-8">
+<title>renlink的骰子动画</title>
+<style>
+.box{
+  width: 100px;
+  height: 100px;
+  perspective: 500px;
+  padding: 75px;
+}
+
+.container{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  
+  transform: rotate3d(1,1,0,45deg);
+  transition: all 1s;
+}
+
+
+.container:hover{
+  transform: rotate3d(1,1,0,765deg);
+}
+
+
+.container:hover>.face{
+  font-size:0;
+}
+
+
+.face{
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-size: 60px;
+  line-height: 100px;
+  position: absolute;
+  text-align: center;
+  
+  background: rgba(150,255,120,0.5);
+  box-sizing: border-box;
+  border: 1px dotted black;
+  transition: font-size 1s 1s,transform 2s;
+}
+
+
+.one{
+  transform: translateZ(50px);
+}
+.container:hover>.one{
+  transform: rotateZ(360deg) translateZ(100px);
+}
+
+.two{
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.container:hover>.two{
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.three{
+  transform: rotateY(90deg) translateZ(50px);
+}
+.container:hover>.three{
+  transform: rotateX(90deg) translateZ(100px);
+}
+
+.four{
+  transform: rotateX(90deg) translateZ(50px);
+}
+.container:hover>.four{
+  transform: rotateY(90deg) translateZ(100px);
+}
+
+.five{
+  transform: rotateX(-90deg) translateZ(50px);
+}
+.container:hover>.five{
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.six{
+  transform: rotateY(-180deg) translateZ(50px);
+}
+.container:hover>.six{
+  transform: rotateX(-180deg) translateZ(100px);
+}
+
+.seven{
+  background: none;
+  border: none;
+  
+}
+
+.seven:after{
+  color: red;
+  content:'';
+  font-size:0;
+  transition: all 2s,color 4s;
+  cursor: pointer;
+}
+
+
+.container:hover>.seven:after{
+  color: blue;
+  content:'k';
+  font-size:150px;
+}
+</style>
+</head>
+<body>
+<div class="box">
+<div class="container">
+  <div class="face one">r</div>
+  <div class="face two">e</div>
+  <div class="face three">n</div>
+  <div class="face four">l</div>
+  <div class="face five">i</div>
+  <div class="face six">n</div>
+  <div class="face seven"></div>
+</div>
+</div>
+
+my name is renlink
+
+</body>
+</html>
+
+
+
+
+
+
+
